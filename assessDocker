@@ -1,0 +1,4 @@
+FROM openjdk:8
+EXPOSE 8082
+ADD target/r2r-assess-batch.jar r2r-assess-batch.jar
+ENTRYPOINT ["java","-jar","r2r-assess-batch.jar"]

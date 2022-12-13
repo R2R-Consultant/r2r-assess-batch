@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: assessBatch-deployment
+  labels:
+    app: assessBatch
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: assessBatch
+  template:
+    metadata:
+      labels:
+        app: assessBatch
+    spec:
+      containers: 
+      - name: assessBatch
+        image: assessBatch:1.14.2
+        ports:
+        - containerPort: 8082
